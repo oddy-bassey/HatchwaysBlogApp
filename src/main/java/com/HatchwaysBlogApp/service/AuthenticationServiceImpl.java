@@ -9,6 +9,7 @@ import com.HatchwaysBlogApp.model.User;
 import com.HatchwaysBlogApp.repository.UserRepository;
 import com.HatchwaysBlogApp.security.JwtProvider;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -88,5 +89,11 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         SecurityContextHolder.getContext().setAuthentication(authenticate);
 
         return jwtProvider.generateToken(authenticate);
+    }
+
+    @Override
+    public boolean isLoggedIn() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
     }
 }

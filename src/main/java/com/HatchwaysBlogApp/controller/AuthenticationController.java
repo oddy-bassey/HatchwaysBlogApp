@@ -25,6 +25,7 @@ public class AuthenticationController {
 
         if(authService.findByUsername(registerRequest.getUsername()).isPresent()){
             throw new BlogAppException(String.format("username: %s already exists!", registerRequest.getUsername()));
+
         }else if(authService.findByEmail(registerRequest.getEmail()).isPresent()){
             throw new BlogAppException(String.format("email: %s already exists!", registerRequest.getEmail()));
         }

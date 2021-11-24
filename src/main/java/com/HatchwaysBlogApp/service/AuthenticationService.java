@@ -20,4 +20,6 @@ public interface AuthenticationService {
     Optional<User> findByEmail(String email);
 
     String getToken(LoginRequest loginRequest);
+
+    boolean isLoggedIn();
 }
