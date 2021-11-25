@@ -44,5 +44,12 @@ up-vote or down-vote blog posts (like / dislike).
 * To up-vote (like) a blog post, the voteType is 1 and to down-vote(dislike) a blog posts, the voteType is 0
 * **Please note** that all data stored are only available during runtime because the application uses an in-memory db(H2) spawned only when the application 
 is running and hence killed when application is stopped.
+  
+# Repository
+https://github.com/oddy-bassey/HatchwaysBlogApp/
 
-
+**Applicant Info**
+Please I would like to state that I was unable to commence this assessment immediately I got the mail because of the fact that I was
+at that time trying to move to a different location(state) withtin my country. I was only able to begin this assessment on november 23 as observed
+from my github commit time period. I was only able to make an initial commit for the project folder on november 15. I also notified Jaclyn Ling(Co-founder and CEO)
+via a mail on november 17 about this. I sincerely hope i'm considered as regards timeliness in delivery.
