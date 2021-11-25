@@ -45,7 +45,7 @@ public class PostServiceImpl implements PostService{
     public void update(Long postId, UpdatePostRequest updatePostRequest) {
 
         Post post = postRepository.findById(postId)
-                .orElseThrow(() -> new PostNotFoundException(String.format("no post exist with id: %d", postId)));
+                .orElseThrow(() -> new PostNotFoundException(String.format("no post exist with id: %s", postId.toString())));
 
         post.setTitle(updatePostRequest.getTitle());
         post.setDescription(updatePostRequest.getDescription());
@@ -59,7 +59,7 @@ public class PostServiceImpl implements PostService{
     @Override
     public PostResponse getPost(Long id) {
         Post post = postRepository.findById(id)
-                .orElseThrow(() -> new PostNotFoundException(id.toString()));
+                .orElseThrow(() -> new PostNotFoundException(String.format("no posts exist with id: %s", id.toString())));
         return postMapper.mapToDto(post);
     }
 

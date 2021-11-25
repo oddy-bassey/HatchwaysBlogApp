@@ -1,6 +1,7 @@
 package com.HatchwaysBlogApp.exceptions;
 
 public class PostNotFoundException extends RuntimeException {
-    public PostNotFoundException(String message) {
+    public PostNotFoundException(String exMessage) {
+        super(exMessage);
     }
 }
