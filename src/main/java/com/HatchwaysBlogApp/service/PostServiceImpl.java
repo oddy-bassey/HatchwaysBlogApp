@@ -7,6 +7,7 @@ import com.HatchwaysBlogApp.exceptions.PostNotFoundException;
 import com.HatchwaysBlogApp.mapper.PostMapper;
 import com.HatchwaysBlogApp.model.Post;
 import com.HatchwaysBlogApp.model.User;
+import com.HatchwaysBlogApp.repository.CommentRepository;
 import com.HatchwaysBlogApp.repository.PostRepository;
 import com.HatchwaysBlogApp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -83,5 +84,19 @@ public class PostServiceImpl implements PostService{
                 .stream()
                 .map(postMapper::mapToDto)
                 .collect(toList());
+    }
+
+    @Override
+    public void deletePost(Long postId) {
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException(String.format("no post exist with id: %s", postId.toString())));
+
+        //post.setUser(null);
+
+        //TO-DO
+        //delete all comments associated to post if any
+        //delete all votes associated to post if any
+
+        postRepository.delete(post);
     }
 }

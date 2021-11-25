@@ -57,6 +57,8 @@ class PostControllerTest {
                 .build();
     }
 
+    //kindly uncomment the @Test annotation to execute. thanks :)
+
     //@Test
     public void createBlogPostTest() throws Exception {
         createBlogPost("World's Most Deadly/Beautiful Thing",

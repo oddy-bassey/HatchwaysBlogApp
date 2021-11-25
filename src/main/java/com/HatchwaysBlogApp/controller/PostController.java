@@ -32,7 +32,7 @@ public class PostController {
     public ResponseEntity<Void> updatePost(@PathVariable Long postId, @Valid @RequestBody UpdatePostRequest updatePostRequest) {
 
         postService.update(postId, updatePostRequest);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/")
@@ -40,13 +40,20 @@ public class PostController {
         return status(HttpStatus.OK).body(postService.getAllPosts());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<PostResponse> getPostById(@PathVariable Long id) {
-        return status(HttpStatus.OK).body(postService.getPost(id));
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostResponse> getPostById(@PathVariable Long postId) {
+        return status(HttpStatus.OK).body(postService.getPost(postId));
     }
 
     @GetMapping("/by-user/{name}")
     public ResponseEntity<List<PostResponse>> getPostsByUsername(@PathVariable String name) {
         return status(HttpStatus.OK).body(postService.getPostsByUsername(name));
     }
+
+    /*
+    @DeleteMapping("/delete/{postId}")
+    public ResponseEntity<Void> deletePost(@PathVariable Long postId){
+        postService.deletePost(postId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }*/
 }

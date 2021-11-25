@@ -4,14 +4,6 @@
 #
 version: 2
 jobs:
-  test:
-    steps:
-      - checkout
-    docker:
-      - image: circleci/openjdk:11-browsers-legacy
-
-    parallelism: 4
-
   build:
     docker:
       # specify the version you desire here
