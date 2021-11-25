@@ -57,7 +57,7 @@ class PostControllerTest {
                 .build();
     }
 
-    @Test
+    //@Test
     public void createBlogPostTest() throws Exception {
         createBlogPost("World's Most Deadly/Beautiful Thing",
                 "https://github.com/oddy-bassey/HatchwaysBlogApp/",
@@ -65,7 +65,7 @@ class PostControllerTest {
                         "or the most beautiful thing there is in the world.");
     }
 
-    @Test
+    //@Test
     public void getAllBlogPostTest() throws Exception {
 
         String authToken = createBlogPost("TOGAF",
@@ -77,7 +77,7 @@ class PostControllerTest {
         getAllBlogPost(authToken);
     }
 
-    @Test
+    //@Test
     public void getBlogPostByIdTest() throws Exception {
         String authToken = createBlogPost("Java Stream",
                 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjqwoOyxrP0AhUMSvEDHbUOBxAQFnoECA4QAw&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fstream-in-java%2F&usg=AOvVaw3fTbCEFEjMLFawELMY0WBq",
@@ -87,7 +87,7 @@ class PostControllerTest {
         getBlogPostById(1L, authToken);
     }
 
-    @Test
+    //@Test
     public void getBlogPostByUsernameTest() throws Exception {
         String authToken = createBlogPost("Java Stream",
                 "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjqwoOyxrP0AhUMSvEDHbUOBxAQFnoECA4QAw&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fstream-in-java%2F&usg=AOvVaw3fTbCEFEjMLFawELMY0WBq",
