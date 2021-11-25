@@ -1,18 +1,15 @@
 package com.HatchwaysBlogApp.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
-import java.time.Instant;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class PostRequest {
+public class UpdatePostRequest {
 
     @NotEmpty(message = "title is required")
     private String title;
@@ -21,5 +18,5 @@ public class PostRequest {
     private String url;
 
     @NotEmpty(message = "description is required")
-    private String description;
+    private String description; 
 }

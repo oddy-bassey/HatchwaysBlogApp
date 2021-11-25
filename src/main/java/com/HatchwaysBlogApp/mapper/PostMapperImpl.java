@@ -30,14 +30,11 @@ public class PostMapperImpl implements PostMapper{
     public Post mapToModel(PostRequest postRequest, User user) {
 
         return Post.builder()
-                .postId(postRequest.getPostId())
                 .title(postRequest.getTitle())
                 .description(postRequest.getDescription())
                 .url(postRequest.getUrl())
                 .user(user)
                 .voteCount(0)
-                .createdDate(postRequest.getCreatedDate())
-                .lastUpdated(postRequest.getLastUpdated())
                 .build();
     }
 

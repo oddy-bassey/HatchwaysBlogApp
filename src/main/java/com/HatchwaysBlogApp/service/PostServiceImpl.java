@@ -2,6 +2,7 @@ package com.HatchwaysBlogApp.service;
 
 import com.HatchwaysBlogApp.dto.PostRequest;
 import com.HatchwaysBlogApp.dto.PostResponse;
+import com.HatchwaysBlogApp.dto.UpdatePostRequest;
 import com.HatchwaysBlogApp.exceptions.PostNotFoundException;
 import com.HatchwaysBlogApp.mapper.PostMapper;
 import com.HatchwaysBlogApp.model.Post;
@@ -35,6 +36,20 @@ public class PostServiceImpl implements PostService{
 
         Post post = postMapper.mapToModel(postRequest, authService.getCurrentUser());
         post.setCreatedDate(Instant.now());
+        post.setLastUpdated(Instant.now());
+
+        postRepository.save(post);
+    }
+
+    @Override
+    public void update(Long postId, UpdatePostRequest updatePostRequest) {
+
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException(String.format("no post exist with id: %d", postId)));
+
+        post.setTitle(updatePostRequest.getTitle());
+        post.setDescription(updatePostRequest.getDescription());
+        post.setUrl(updatePostRequest.getUrl());
         post.setLastUpdated(Instant.now());
 
         postRepository.save(post);
