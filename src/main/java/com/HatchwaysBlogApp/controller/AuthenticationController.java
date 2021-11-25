@@ -35,7 +35,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/signin")
-    public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
+    public AuthenticationResponse signin(@RequestBody LoginRequest loginRequest) {
         return authService.login(loginRequest);
     }
 }

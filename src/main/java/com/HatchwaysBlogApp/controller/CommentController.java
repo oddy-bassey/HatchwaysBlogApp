@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.OK;
 @RestController
 @RequestMapping("/api/comments")
 @RequiredArgsConstructor
-public class CommentsController {
+public class CommentController {
 
     private final CommentServiceImpl commentService;
 
