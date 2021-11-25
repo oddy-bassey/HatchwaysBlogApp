@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "a3157822-56d9-413b-8d1c-79d454e97d12",
+		"name": "HatchWaysBlog App Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"emma\",\n    \"email\" : \"emma@email.com\",\n    \"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "create blog post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Bulding a SpringBoot Blog Application\",\n    \"url\" : \"https://github.com/oddy-bassey/HatchwaysBlogApp/\",\n    \"description\" : \"This is a simple project illustrating how create a simple blog application backend in Java(SpringBoot)\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit blog post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3ODU5ODc5LCJleHAiOjE2Mzc4Njg4Nzl9.NQ7-AStK__UtfUT1CRUuamN5CkBzfmpt5NiZTPLg25g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Bulding a SpringBoot Blog Application part2\",\n    \"url\" : \"https://github.com/oddy-bassey/HatchwaysBlogApp/\",\n    \"description\" : \"This is a simple project illustrating how create a simple blog application backend in Java(SpringBoot)\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/posts/edit-post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"edit-post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all blog posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch blog post by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch blog post by username",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/posts/by-user/emma",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts",
+						"by-user",
+						"emma"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment on a post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"postId\" : 1,\n    \"text\" : \"I love learning from you Oddy, thanks so much.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/comments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch comment by post (post Id)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/comments/by-post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments",
+						"by-post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch comment by username",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hIiwicm9sZXMiOiJVU0VSIiwiaWF0IjoxNjM3NzY2Mzk5LCJleHAiOjE2Mzc3NzUzOTl9.ltkqAy4tznjnNKAdcCbsU_WqXdDv37t43dHt1fscODo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/comments/by-user/emma",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"comments",
+						"by-user",
+						"emma"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
